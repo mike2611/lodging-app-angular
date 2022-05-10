@@ -8,17 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthHeaderInterceptor } from './login/auth-header.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginModule } from './login/login.module';
+import { SignupModule } from './sign-up/signup.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    SignUpComponent,
     NavbarComponent,
   ],
   imports: [
@@ -29,6 +27,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    LoginModule,
+    SignupModule,
   ],
   providers: [
     {
