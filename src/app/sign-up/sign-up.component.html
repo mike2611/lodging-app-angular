@@ -1,0 +1,14 @@
+<h1>Crear Usuario</h1>
+<form [formGroup]="signUpForm">
+  <label>
+    Name
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    BirthDate
+    <input type="date" formControlName="birthDate">
+  </label>
+  <button (click)="signUp()" type="submit">
+    Crear nuevo Usuario
+  </button>
+</form>

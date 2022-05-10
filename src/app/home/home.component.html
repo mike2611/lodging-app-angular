@@ -1,0 +1,17 @@
+<h1>AVAILABLE ROOMS</h1>
+<p>Please select a room</p>
+<mat-grid-list cols="2" rowHeight="2:1" color>
+  <mat-grid-tile *ngFor="let room of rooms$ | async">
+    <div class="d-flex flex-column align-items-center mb-5">
+      <ng-container *ngIf="room.image; else elseBlock">
+        <img src={{room.image}} alt="room">
+      </ng-container>
+      <ng-template #elseBlock>
+        <img
+          src="https://assets.architecturaldigest.in/photos/621f43c6fa7af6911e95b64a/16:9/w_1615,h_908,c_limit/7%20budget-friendly%20kids%E2%80%99%20room%20design%20ideas.jpg"
+          alt="room">
+      </ng-template>
+    </div>
+    <mat-grid-tile-footer>{{room.hotel.name}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
