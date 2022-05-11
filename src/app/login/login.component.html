@@ -1,6 +1,14 @@
-<h1>Inicia Sesion</h1>
-<form>
-  <label for="name"> Name: </label>
-  <input id="name" type="text" [formControl]="name">
-  <button (click)="signIn()" type="submit">Iniciar Sesión</button>
-</form>
+<section class="d-flex justify-content-center mt-5">
+  <div class="text-center">
+    <h1>Inicia Sesion</h1>
+    <mat-card-content>
+      <form>
+        <mat-form-field class=" me-3 example-full-width" appearance="fill">
+          <mat-label for="name">Name: </mat-label>
+          <input matInput id="name" type="text" [formControl]="name">
+        </mat-form-field>
+        <button mat-button (click)="signIn()" type="submit" color="primary">Iniciar Sesión</button>
+      </form>
+    </mat-card-content>
+  </div>
+</section>
