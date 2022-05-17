@@ -14,6 +14,11 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [IsLoggedInGuard],
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
 ];
 
 @NgModule({
