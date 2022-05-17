@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent {
 
-  links = ['login', 'home', 'signup'];
+  links = ['signup', 'login', 'home', 'contact'];
 
   constructor() { }
 
