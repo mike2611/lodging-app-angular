@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModule } from './login/login.module';
 import { SignupModule } from './sign-up/signup.module';
 import { RoomComponent } from './home/room/room.component';
+import { ReserveRoomComponent } from './home/room/reserve-room/reserve-room.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RoomComponent } from './home/room/room.component';
     HomeComponent,
     NavbarComponent,
     RoomComponent,
+    ReserveRoomComponent,
   ],
   imports: [
     BrowserModule,

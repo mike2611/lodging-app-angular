@@ -3,22 +3,21 @@
     <h1>Crear Usuario</h1>
     <form [formGroup]="signUpForm">
       <mat-card-content>
-
+        <mat-form-field class="example-full-width me-3" appearance="fill">
+          <mat-label for="name">Name: </mat-label>
+          <input matInput id="name" type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="me-3" appearance="fill">
+          <mat-label>BirthDate</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-button (click)="signUp()" type="submit" color="primary">
+          Crear nuevo Usuario
+        </button>
       </mat-card-content>
-      <mat-form-field class="example-full-width me-3" appearance="fill">
-        <mat-label for="name">Name: </mat-label>
-        <input matInput id="name" type="text" formControlName="name">
-      </mat-form-field>
-      <mat-form-field class="me-3" appearance="fill">
-        <mat-label>BirthDate</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="birthDate">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <button mat-button (click)="signUp()" type="submit" color="primary">
-        Crear nuevo Usuario
-      </button>
     </form>
   </div>
 </section>

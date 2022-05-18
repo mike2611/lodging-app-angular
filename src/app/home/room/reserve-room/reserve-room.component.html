@@ -1,0 +1,28 @@
+<h1>Reserva la habitacion</h1>
+<ng-container *ngIf="room$ | async as room">
+  <h2>Reservacion para hotel {{room.hotel.name}} por {{room.price | currency}} para un maximo numero de personas
+    {{room.people_amount}}
+  </h2>
+  <form [formGroup]="reservationForm">
+    <h3>Selecciones las fechas para su estancia</h3>
+    <mat-card-content>
+      <mat-form-field class="m-3" appearance="fill">
+        <mat-label>Check-in date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="check_in_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="m-3" appearance="fill">
+        <mat-label>Check-out date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="check_out_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <button mat-button (click)="reserve(room.id)" type="submit" color="primary">
+        Reserve la habitacion
+      </button>
+    </mat-card-content>
+  </form>
+</ng-container>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, Observable } from 'rxjs';
 import { RoomService } from './room.service';
 import { Room } from '../../room';
@@ -19,6 +19,11 @@ export class RoomComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private roomService: RoomService
   ) { }
+
+  navigateToReserveRoom(): void {
+    this.router.navigate(['reserve'], { relativeTo: this.route });
+  }
 }
