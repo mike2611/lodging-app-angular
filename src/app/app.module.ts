@@ -14,6 +14,7 @@ import { LoginModule } from './login/login.module';
 import { SignupModule } from './sign-up/signup.module';
 import { RoomComponent } from './home/room/room.component';
 import { ReserveRoomComponent } from './home/room/reserve-room/reserve-room.component';
+import { ReservationsModule } from './reservations/reservations.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ReserveRoomComponent } from './home/room/reserve-room/reserve-room.comp
     ReactiveFormsModule,
     LoginModule,
     SignupModule,
+    ReservationsModule,
   ],
   providers: [
     {
