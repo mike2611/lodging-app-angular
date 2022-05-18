@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Room } from '../room'
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from './home.service';
 
 @Component({
@@ -7,13 +7,18 @@ import { HomeService } from './home.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   rooms$ = this.homeService.rooms$;
 
-  constructor(private homeService: HomeService) { }
+  constructor(
+    private homeService: HomeService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  navigateToRoomDetails(id: number): void {
+    this.router.navigate([id], { relativeTo: this.route });
   }
 
 }

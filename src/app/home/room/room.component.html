@@ -1,0 +1,24 @@
+<section class="text-center mt-5">
+  <div>
+    <ng-container *ngIf="room$ | async as room">
+      <ng-container *ngIf="room.image; else elseBlock">
+        <img src={{room.image}} alt="room">
+      </ng-container>
+      <ng-template #elseBlock>
+        <img
+          src="https://assets.architecturaldigest.in/photos/621f43c6fa7af6911e95b64a/16:9/w_1615,h_908,c_limit/7%20budget-friendly%20kids%E2%80%99%20room%20design%20ideas.jpg"
+          alt="room">
+      </ng-template>
+      <h1 class="text-uppercase">{{room.hotel.name}}</h1>
+      <h2 class="fw-bold fs-4">{{room.description}}</h2>
+      <ul class="list-unstyled">
+        <li>Max.amount of people: {{room.people_amount}}</li>
+        <li>Price per night {{room.price | currency}}</li>
+      </ul>
+    </ng-container>
+  </div>
+  <div>
+    <button class="btn-primary btn m-3">Reserve</button>
+    <a routerLink="/home" class="btn-danger btn m-3">Go back</a>
+  </div>
+</section>

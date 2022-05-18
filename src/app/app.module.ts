@@ -12,12 +12,14 @@ import { AuthHeaderInterceptor } from './login/auth-header.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModule } from './login/login.module';
 import { SignupModule } from './sign-up/signup.module';
+import { RoomComponent } from './home/room/room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    RoomComponent,
   ],
   imports: [
     BrowserModule,
