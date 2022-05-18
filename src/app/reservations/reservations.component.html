@@ -1,0 +1,34 @@
+<h1>Reservaciones</h1>
+
+<h2>Tus reservaciones</h2>
+<section class="d-flex">
+  <mat-card *ngFor="let reservation of reservations$ | async" class="reservation-card text-center border m-3">
+    <mat-card-header class="d-flex justify-content-center">
+      <mat-card-title>{{reservation.room.hotel.name}}</mat-card-title>
+      <mat-card-subtitle>{{reservation.room.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="d-flex justify-content-center">
+      <ng-container mat-card-image *ngIf="reservation.room.image; else elseBlock">
+        <img src={{reservation.room.image}} alt="room">
+      </ng-container>
+      <ng-template #elseBlock>
+        <img mat-card-image
+          src="https://assets.architecturaldigest.in/photos/621f43c6fa7af6911e95b64a/16:9/w_1615,h_908,c_limit/7%20budget-friendly%20kids%E2%80%99%20room%20design%20ideas.jpg"
+          alt="room">
+      </ng-template>
+    </div>
+    <mat-card-content>
+      <p>
+        {{reservation.room.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+      <p class="fw-bold">
+        checkInDate: {{reservation.check_in_date | date}}
+      </p>
+      <p class="fw-bold">
+        checkOutDate: {{reservation.check_out_date | date}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</section>

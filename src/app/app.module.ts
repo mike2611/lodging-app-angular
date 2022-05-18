@@ -12,12 +12,17 @@ import { AuthHeaderInterceptor } from './login/auth-header.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModule } from './login/login.module';
 import { SignupModule } from './sign-up/signup.module';
+import { RoomComponent } from './home/room/room.component';
+import { ReserveRoomComponent } from './home/room/reserve-room/reserve-room.component';
+import { ReservationsModule } from './reservations/reservations.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    RoomComponent,
+    ReserveRoomComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import { SignupModule } from './sign-up/signup.module';
     ReactiveFormsModule,
     LoginModule,
     SignupModule,
+    ReservationsModule,
   ],
   providers: [
     {
