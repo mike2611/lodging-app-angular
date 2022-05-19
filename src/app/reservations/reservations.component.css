@@ -1,7 +1,16 @@
-img {
+.reservation-card {
+  max-width: 400px;
+}
+
+.filter {
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+}
+
+table {
   width: 100%;
 }
 
-.reservation-card {
-  max-width: 400px;
+th {
+  width: 20%;
 }

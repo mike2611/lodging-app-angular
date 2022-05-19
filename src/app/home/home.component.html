@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<mat-grid-list cols="3" rowHeight="2:1" color>
+<mat-grid-list cols="3" rowHeight="2:1">
   <mat-grid-tile *ngFor="let room of rooms$ | async">
     <a (click)="navigateToRoomDetails(room.id)">
       <div class="d-flex flex-column align-items-center mb-5">
